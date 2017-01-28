@@ -1,0 +1,57 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "21811f6cb4d3e34ed79d612c48b825d5",
+    "packages": [
+        {
+            "name": "jpuck/peer-value-distributer",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jpuck/peer-value-distributer.git",
+                "reference": "aaa5b6428670e8b7deee572cdcf342df9e95df77"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jpuck/peer-value-distributer/zipball/aaa5b6428670e8b7deee572cdcf342df9e95df77",
+                "reference": "aaa5b6428670e8b7deee572cdcf342df9e95df77",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.7"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "jpuck\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Puckett",
+                    "email": "jeff@jeffpuckett.com"
+                }
+            ],
+            "description": "Given an array, return a new array with the same keys and values randomly distributed evenly amongst the peers in the specified batch quantity.",
+            "time": "2017-01-28T22:35:15+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}
