@@ -15,6 +15,10 @@ if ( $response->getStatusCode() === 200 ) {
 
     $distribution = jpuck\PeerValueDistributer::distribute($blogs, $count = 3);
 
+    $timestamp = date("Y-m-d\TH:i:s\Z");
+    $filename = "peer-review-assignments-$timestamp.json";
+    file_put_contents($filename, json_encode($distribution));
+
     $dotenv = new Dotenv\Dotenv(dirname(__DIR__));
     $dotenv->load();
 
@@ -36,6 +40,7 @@ if ( $response->getStatusCode() === 200 ) {
         $mailer->send(Swift_Message::newInstance('ISYS 4283 Blog Review')
             ->setFrom("isys4283@uark.edu")
             ->setTo("$username@uark.edu")
+            ->setCc("jpucket@uark.edu")
             ->setBody($message . print_r($reviews, true))
         );
         sleep(1);
