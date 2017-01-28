@@ -10,7 +10,8 @@
     ],
     "require": {
         "php": "^7.0",
-        "jpuck/peer-value-distributer": "^1.0"
+        "jpuck/peer-value-distributer": "^1.0",
+        "guzzlehttp/guzzle": "^6.2"
     },
     "autoload": {
         "psr-4": {
