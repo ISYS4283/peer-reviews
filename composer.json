@@ -11,7 +11,9 @@
     "require": {
         "php": "^7.0",
         "jpuck/peer-value-distributer": "^1.0",
-        "guzzlehttp/guzzle": "^6.2"
+        "guzzlehttp/guzzle": "^6.2",
+        "vlucas/phpdotenv": "^2.4",
+        "swiftmailer/swiftmailer": "^5.4"
     },
     "autoload": {
         "psr-4": {
