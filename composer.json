@@ -1,0 +1,23 @@
+{
+    "name": "isys4283/peer-reviews",
+    "description": "System for reviewing peer work.",
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Jeff Puckett",
+            "email": "jeff@jeffpuckett.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "jpuck/peer-value-distributer": "^1.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "vlucas/phpdotenv": "^2.4",
+        "swiftmailer/swiftmailer": "^5.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "isys4283\\PeerReviews\\": "src/"
+        }
+    }
+}
