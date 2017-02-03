@@ -21,6 +21,13 @@ if ( $response->getStatusCode() === 200 ) {
 
     $dotenv = new Dotenv\Dotenv(dirname(__DIR__));
     $dotenv->load();
+    $dotenv->required([
+        'MAIL_HOST',
+        'MAIL_PORT',
+        'MAIL_USERNAME',
+        'MAIL_PASSWORD',
+        'MAIL_ENCRYPTION',
+    ])->notEmpty();
 
     $mailer = Swift_Mailer::newInstance(
         Swift_SmtpTransport::newInstance(
