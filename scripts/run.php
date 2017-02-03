@@ -25,7 +25,7 @@ if ( $response->getStatusCode() === 200 ) {
 
     $distribution = jpuck\PeerValueDistributer::distribute($blogs, $count = 3);
 
-    $timestamp  = date("Y-m-d\TH:i:s\Z");
+    $timestamp  = date("c");
     $production = getenv('APP_ENV');
     $filename   = "peer-review-assignments-$production-$timestamp.json";
     file_put_contents($filename, json_encode($distribution, JSON_PRETTY_PRINT));
