@@ -17,7 +17,7 @@ if ( $response->getStatusCode() === 200 ) {
 
     $timestamp = date("Y-m-d\TH:i:s\Z");
     $filename = "peer-review-assignments-$timestamp.json";
-    file_put_contents($filename, json_encode($distribution));
+    file_put_contents($filename, json_encode($distribution, JSON_PRETTY_PRINT));
 
     $dotenv = new Dotenv\Dotenv(dirname(__DIR__));
     $dotenv->load();
