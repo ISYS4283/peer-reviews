@@ -2,6 +2,16 @@
 
 $endpoint = 'https://blog.isys4283.walton.uark.edu/wp-json/semantic-scale/v1/leaderboard';
 
+$dotenv = new Dotenv\Dotenv(dirname(__DIR__));
+$dotenv->load();
+$dotenv->required([
+    'MAIL_HOST',
+    'MAIL_PORT',
+    'MAIL_USERNAME',
+    'MAIL_PASSWORD',
+    'MAIL_ENCRYPTION',
+])->notEmpty();
+
 $client = new GuzzleHttp\Client();
 
 $response = $client->request('GET', $endpoint);
@@ -18,16 +28,6 @@ if ( $response->getStatusCode() === 200 ) {
     $timestamp = date("Y-m-d\TH:i:s\Z");
     $filename = "peer-review-assignments-$timestamp.json";
     file_put_contents($filename, json_encode($distribution, JSON_PRETTY_PRINT));
-
-    $dotenv = new Dotenv\Dotenv(dirname(__DIR__));
-    $dotenv->load();
-    $dotenv->required([
-        'MAIL_HOST',
-        'MAIL_PORT',
-        'MAIL_USERNAME',
-        'MAIL_PASSWORD',
-        'MAIL_ENCRYPTION',
-    ])->notEmpty();
 
     $mailer = Swift_Mailer::newInstance(
         Swift_SmtpTransport::newInstance(
