@@ -51,6 +51,6 @@ if ( $response->getStatusCode() === 200 ) {
             ->setCc("jpucket@uark.edu")
             ->setBody($message . print_r($reviews, true))
         );
-        sleep(1);
+        sleep(2);
     }
 }
